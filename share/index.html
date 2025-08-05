@@ -1,0 +1,1531 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head><script src="../static/e-2.js"></script>
+<!-- <link rel="icon" type="image/png" href="../image/csg-logo.png"> -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CarStyleGarage - Ihr Profi für Carwrapping & Werbetechnik in Kreuztal</title>
+<script src="../3.4-1.16"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="../css2-2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="../css2-3?family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../ajax/libs/remixicon/4.6.0/remixicon.min-1.css">
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#ffd700',
+secondary: '#b8860b'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Oswald', sans-serif;
+scroll-behavior: smooth;
+}
+[class="contact-link"] {
+  color: #888888;
+  transition: color 0.3s;
+}
+[class="contact-link"]:hover {
+  color: #b8860b;
+}
+.glassmorphism {
+background: rgba(255, 255, 255, 0.1);
+-webkit-backdrop-filter: blur(10px);
+backdrop-filter: blur(10px);
+border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.neumorphism {
+background: linear-gradient(145deg, #f0f0f0, #cacaca);
+box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+.neumorphism-inset {
+background: linear-gradient(145deg, #cacaca, #f0f0f0);
+box-shadow: inset 20px 20px 60px #bebebe, inset -20px -20px 60px #ffffff;
+}
+.metallic {
+background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 25%, #c0c0c0 50%, #e8e8e8 75%, #c0c0c0 100%);
+}
+.hero-bg {
+  background: none;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.parallax {
+transform: translateZ(0);
+}
+.hover-scale {
+transition: transform 0.3s ease;
+}
+.hover-scale:hover {
+transform: scale(1.05);
+}
+.floating {
+animation: floating 3s ease-in-out infinite;
+}
+@keyframes floating {
+0%, 100% { transform: translateY(0px); }
+50% { transform: translateY(-10px); }
+}
+.scroll-indicator {
+animation: bounce 2s infinite;
+}
+@keyframes bounce {
+0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+40% { transform: translateY(-10px); }
+60% { transform: translateY(-5px); }
+}
+.fade-in {
+opacity: 0;
+transform: translateY(30px);
+transition: all 0.6s ease;
+}
+.fade-in.visible {
+opacity: 1;
+transform: translateY(0);
+}
+
+/* Анимация для верхнего меню */
+.menu-animate {
+  animation: menuFlipX 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  opacity: 0;
+  transform-style: preserve-3d;
+}
+@keyframes menuFlipX {
+  0% {
+    opacity: 0;
+    transform: rotateX(90deg) scale(0.95);
+  }
+  60% {
+    opacity: 1;
+    transform: rotateX(-10deg) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg) scale(1);
+  }
+}
+@keyframes menuFadeIn {
+/* Удалено: menuFadeIn, используется только menuFlipX */
+}
+.service-card {
+background: linear-gradient(145deg, #ffffff, #e8e8e8);
+/* Анимация для надписи CarStyleGarage */
+.logo-animate {
+  background: linear-gradient(90deg, #ffd700 0%, #b8860b 50%, #ffd700 100%);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: logoGradientMove 2s linear infinite;
+}
+@keyframes logoGradientMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+box-shadow: 15px 15px 30px #d1d1d1, -15px -15px 30px #ffffff;
+transition: all 0.3s ease;
+}
+.service-card:hover {
+transform: translateY(-5px);
+box-shadow: 20px 20px 40px #d1d1d1, -20px -20px 40px #ffffff;
+}
+.golden-gradient {
+background: linear-gradient(135deg, #ffd700, #b8860b);
+}
+.sticky-header {
+position: fixed;
+top: 0;
+width: 100%;
+z-index: 1000;
+transition: all 0.3s ease;
+}
+.mobile-menu {
+transform: translateX(100%);
+transition: transform 0.3s ease;
+}
+.mobile-menu.active {
+transform: translateX(0);
+}
+.hamburger span {
+transition: all 0.3s ease;
+}
+.hamburger.active span:nth-child(1) {
+transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+transform: rotate(-45deg) translate(7px, -6px);
+}
+.whatsapp-float {
+position: fixed;
+bottom: 2rem;
+right: 2rem;
+z-index: 1000;
+animation: pulse 2s infinite;
+}
+@keyframes pulse {
+0% { transform: scale(1); }
+50% { transform: scale(1.1); }
+100% { transform: scale(1); }
+}
+.back-to-top {
+position: fixed;
+bottom: 2rem;
+left: 2rem;
+z-index: 1000;
+opacity: 0;
+visibility: hidden;
+transition: all 0.3s ease;
+}
+.back-to-top.visible {
+opacity: 1;
+visibility: visible;
+}
+.booking-step {
+display: none;
+}
+.booking-step.active {
+display: block;
+}
+.progress-bar {
+transition: width 0.3s ease;
+}
+.progress-bar-25 {
+  width: 25%;
+}
+.btn-hidden {
+  display: none;
+}
+.map-bg {
+  background-image: url('../gen_page/map_placeholder_1280x720-2.png');
+  background-size: cover;
+  background-position: center;
+}
+.gallery-filter.active {
+background: linear-gradient(135deg, #ffd700, #b8860b);
+color: white;
+}
+.gallery-item {
+transition: all 0.3s ease;
+}
+.gallery-item:hover {
+transform: scale(1.02);
+}
+.before-after-slider {
+position: relative;
+overflow: hidden;
+}
+.before-after-handle {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 40px;
+height: 40px;
+background: #ffd700;
+border-radius: 50%;
+cursor: ew-resize;
+z-index: 10;
+}
+.lightbox {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.9);
+z-index: 2000;
+justify-content: center;
+align-items: center;
+}
+.lightbox.active {
+display: flex;
+}
+.faq-answer {
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.3s ease;
+}
+.faq-item.active .faq-answer {
+max-height: 200px;
+}
+.loading {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: #ffffff;
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 9999;
+}
+.loader {
+width: 50px;
+height: 50px;
+border: 3px solid #e8e8e8;
+border-top: 3px solid #ffd700;
+border-radius: 50%;
+animation: spin 1s linear infinite;
+}
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+</style>
+</head>
+<body class="bg-white text-gray-900">
+<div class="loading" id="loading">
+<div class="loader"></div>
+</div>
+<header class="sticky-header bg-white shadow-sm">
+<nav class="container mx-auto px-4 py-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 flex items-center justify-center">
+<img src="../image/bc0278286d811d4b2215533ff8dd92ef/3f71de0fca98339a1d8976cb697a3bff-1.png" alt="CarStyleGarage Logo" class="w-full h-full object-contain">
+</div>
+<div class="hidden md:block">
+<div class="menu-animate">
+  <h1 class="text-xl font-bold text-black">CarStyleGarage</h1>
+  <p class="text-sm text-gray-600">Kreuztal • Siegen • Olpe</p>
+</div>
+</div>
+</div>
+<div class="hidden lg:flex items-center space-x-8">
+<a href="#services" class="text-2xl text-black hover:text-primary transition-colors">Leistungen</a>
+<a href="#booking" class="text-2xl text-black hover:text-primary transition-colors">Termin</a>
+<a href="#gallery" class="text-2xl text-black hover:text-primary transition-colors">Galerie</a>
+<a href="#about" class="text-2xl text-black hover:text-primary transition-colors">Über uns</a>
+<a href="#contact" class="text-2xl text-black hover:text-primary transition-colors">Kontakt</a>
+</div>
+<div class="flex items-center space-x-4">
+<a href="tel:+4917670991956" class="hidden md:flex items-center space-x-2 golden-gradient text-black px-4 py-2 !rounded-button font-semibold whitespace-nowrap hover-scale">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-phone-line"></i>
+</div>
+<span>Anrufen</span>
+</a>
+<button class="lg:hidden hamburger flex flex-col space-y-1 p-2" id="hamburger" title="Открыть меню">
+<span class="w-6 h-0.5 bg-black block"></span>
+<span class="w-6 h-0.5 bg-black block"></span>
+<span class="w-6 h-0.5 bg-black block"></span>
+</button>
+</div>
+</div>
+<div class="mobile-menu fixed top-0 right-0 w-80 h-full bg-white shadow-xl lg:hidden" id="mobileMenu">
+<div class="p-6">
+<div class="flex justify-end mb-8">
+<button class="text-2xl" id="closeMobile" title="Закрыть меню">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-close-line"></i>
+</div>
+</button>
+</div>
+<nav class="space-y-6">
+<a href="#services" class="block text-2xl font-semibold text-black hover:text-primary">Leistungen</a>
+<a href="#booking" class="block text-2xl font-semibold text-black hover:text-primary">Termin</a>
+<a href="#gallery" class="block text-2xl font-semibold text-black hover:text-primary">Galerie</a>
+<a href="#about" class="block text-2xl font-semibold text-black hover:text-primary">Über uns</a>
+<a href="#contact" class="block text-2xl font-semibold text-black hover:text-primary">Kontakt</a>
+</nav>
+</div>
+</div>
+</nav>
+</header>
+<section class="hero-bg min-h-screen flex items-center relative overflow-hidden">
+  <video id="heroVideo" autoplay muted class="absolute inset-0 w-full h-full object-cover z-0" preload="auto">
+    Ваш браузер не поддерживает видео.
+  </video>
+  <script>
+    // Список видеофайлов
+    const videoFiles = [
+      'video/CarStyleGarage-.mp4',
+      'video/CarStyleGarage-2.mp4',
+      'video/CarStyleGarage-3.mp4'
+    ];
+    // Перемешать массив
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+    const shuffledVideos = shuffle([...videoFiles]);
+    let currentIndex = 0;
+    const video = document.getElementById('heroVideo');
+    function playNextVideo() {
+      video.src = shuffledVideos[currentIndex];
+      video.load();
+      video.play();
+      // Предзагрузка следующего
+      const nextIndex = (currentIndex + 1) % shuffledVideos.length;
+      const preloadVideo = document.createElement('video');
+      preloadVideo.src = shuffledVideos[nextIndex];
+      preloadVideo.preload = 'auto';
+    }
+    video.addEventListener('ended', function() {
+      currentIndex = (currentIndex + 1) % shuffledVideos.length;
+      playNextVideo();
+    });
+    // Запуск первого видео
+    playNextVideo();
+  </script>
+  <div class="container mx-auto px-4 w-full relative z-10">
+    <div class="max-w-4xl text-left text-white flex flex-col items-start justify-start">
+      <!-- Логотип удалён по запросу -->
+      <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+        Ihr Profi für<br>
+        <span class="text-primary">Carwrapping</span> &<br>
+        <span class="text-primary">Werbetechnik</span><br>
+        in Kreuztal
+      </h1>
+      <p class="text-xl md:text-2xl mb-8 text-gray-200">
+        Professionelle Autofolierung • Lackschutz • Scheibentönung • Werbetechnik
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-start items-start">
+        <a href="#booking" class="golden-gradient text-black px-8 py-4 !rounded-button font-bold text-lg hover-scale whitespace-nowrap">
+          JETZT TERMIN VEREINBAREN
+        </a>
+        <a href="https://wa.me/4917670991956" class="glassmorphism text-white px-8 py-4 !rounded-button font-semibold text-lg hover-scale whitespace-nowrap">
+          WhatsApp Nachricht
+        </a>
+      </div>
+    </div>
+  </div>
+<div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 scroll-indicator">
+<div class="w-6 h-6 flex items-center justify-center text-white">
+<i class="ri-arrow-down-line text-2xl"></i>
+</div>
+</div>
+<div class="absolute top-1/2 right-8 hidden xl:flex flex-col space-y-4">
+<div class="w-16 h-16 glassmorphism rounded-xl flex items-center justify-center text-white floating">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-car-line text-2xl"></i>
+</div>
+</div>
+<div class="w-16 h-16 glassmorphism rounded-xl flex items-center justify-center text-white floating floating-delay-05">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-shield-check-line text-2xl"></i>
+</div>
+</div>
+<div class="w-16 h-16 glassmorphism rounded-xl flex items-center justify-center text-white floating floating-delay-1">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-palette-line text-2xl"></i>
+</div>
+</div>
+</div>
+</section>
+<section id="services" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16 fade-in">
+<h2 class="text-4xl md:text-5xl font-bold mb-6">Unsere <span class="text-primary">Leistungen</span></h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+Von professioneller Autofolierung bis hin zu individueller Werbetechnik –
+wir bieten Ihnen das komplette Spektrum für Ihr Fahrzeug und Ihr Business.
+</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="service-card p-8 rounded-2xl fade-in">
+<img src="video/00003-1382309768.png" alt="Autoglas Reparatur" class="w-full h-48 object-cover rounded-xl mb-6">
+<h3 class="text-2xl font-bold mb-4">Autoglas Reparatur und Tausch</h3>
+<p class="text-gray-600 mb-6">Professionelle Reparatur und Austausch von Windschutzscheiben und Seitenscheiben mit modernster Technik.</p>
+<a href="#booking" class="inline-flex items-center space-x-2 text-primary font-semibold hover:text-secondary">
+<span>Angebot anfordern</span>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+<div class="service-card p-8 rounded-2xl fade-in">
+<img src="video/00004-184341082.png" alt="Autofolierung" class="w-full h-48 object-cover rounded-xl mb-6">
+<h3 class="text-2xl font-bold mb-4">Autofolierung</h3>
+<p class="text-gray-600 mb-6">Vollfolierung, Teilfolierung und Design-Folierung für individuelle Fahrzeuggestaltung in Premium-Qualität.</p>
+<a href="#booking" class="inline-flex items-center space-x-2 text-primary font-semibold hover:text-secondary">
+<span>Mehr erfahren</span>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+<div class="service-card p-8 rounded-2xl fade-in">
+<img src="video/00006-1983059701.png" alt="Schaltbare Folien" class="w-full h-48 object-cover rounded-xl mb-6">
+<h3 class="text-2xl font-bold mb-4">Schaltbare Folien</h3>
+<p class="text-gray-600 mb-6">Innovative Smart-Folien mit elektrisch schaltbarer Transparenz für maximale Privatsphäre und Komfort.</p>
+<a href="#booking" class="inline-flex items-center space-x-2 text-primary font-semibold hover:text-secondary">
+<span>Angebot anfordern</span>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+<div class="service-card p-8 rounded-2xl fade-in">
+<img src="video/00008-3700421494.png" alt="Lackschutzfolien" class="w-full h-48 object-cover rounded-xl mb-6">
+<h3 class="text-2xl font-bold mb-4">Lackschutzfolien</h3>
+<p class="text-gray-600 mb-6">Unsichtbarer Schutz für Ihren Fahrzeuglack vor Steinschlägen, Kratzern und Umwelteinflüssen.</p>
+<a href="#booking" class="inline-flex items-center space-x-2 text-primary font-semibold hover:text-secondary">
+<span>Mehr erfahren</span>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+<div class="service-card p-8 rounded-2xl fade-in">
+<img src="video/00009-1600898443.png" alt="Scheibentönung" class="w-full h-48 object-cover rounded-xl mb-6">
+<h3 class="text-2xl font-bold mb-4">Scheibentönung</h3>
+<p class="text-gray-600 mb-6">Professionelle Tönung aller Fahrzeugscheiben für Sonnenschutz, Privatsphäre und elegante Optik.</p>
+<a href="#booking" class="inline-flex items-center space-x-2 text-primary font-semibold hover:text-secondary">
+<span>Angebot anfordern</span>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+<div class="service-card p-8 rounded-2xl fade-in">
+<img src="video/00010-1120432393.png" alt="Möbelfolierung" class="w-full h-48 object-cover rounded-xl mb-6">
+<h3 class="text-2xl font-bold mb-4">Möbelfolierung</h3>
+<p class="text-gray-600 mb-6">Individuelle Folierung von Möbeln und Einrichtungsgegenständen für einzigartige Raumgestaltung.</p>
+<a href="#booking" class="inline-flex items-center space-x-2 text-primary font-semibold hover:text-secondary">
+<span>Mehr erfahren</span>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+<div class="service-card p-8 rounded-2xl fade-in">
+<img src="video/00011-1951506391.png" alt="Beschriftungen aller Art" class="w-full h-48 object-cover rounded-xl mb-6">
+<h3 class="text-2xl font-bold mb-4">Beschriftungen aller Art</h3>
+<p class="text-gray-600 mb-6">Fahrzeugbeschriftung, Schaufensterbeschriftung und individuelle Werbeschilder für Ihr Business.</p>
+<a href="#booking" class="inline-flex items-center space-x-2 text-primary font-semibold hover:text-secondary">
+<span>Angebot anfordern</span>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+<div class="service-card p-8 rounded-2xl fade-in">
+<img src="video/00012-1329908579.png" alt="Textilbeschriftung" class="w-full h-48 object-cover rounded-xl mb-6">
+<h3 class="text-2xl font-bold mb-4">Textilbeschriftung</h3>
+<p class="text-gray-600 mb-6">Professionelle Bedruckung und Beschriftung von Arbeitskleidung, T-Shirts und Werbetextilien.</p>
+<a href="#booking" class="inline-flex items-center space-x-2 text-primary font-semibold hover:text-secondary">
+<span>Mehr erfahren</span>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+<div class="service-card p-8 rounded-2xl fade-in">
+<img src="video/00013-2882098425.png" alt="Banner, Plakate, Schilder" class="w-full h-48 object-cover rounded-xl mb-6">
+<h3 class="text-2xl font-bold mb-4">Banner, Plakate, Schilder</h3>
+<p class="text-gray-600 mb-6">Großformatdruck für Werbebanner, Plakate, Messestände und Außenwerbung in bester Qualität.</p>
+<a href="#booking" class="inline-flex items-center space-x-2 text-primary font-semibold hover:text-secondary">
+<span>Angebot anfordern</span>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section id="booking" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16 fade-in">
+<h2 class="text-4xl md:text-5xl font-bold mb-6">Online <span class="text-primary">Terminbuchung</span></h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+Buchen Sie Ihren Termin ganz einfach online. Wählen Sie Ihre gewünschte Leistung
+und Ihren Wunschtermin – wir melden uns umgehend bei Ihnen.
+</p>
+</div>
+<div class="max-w-4xl mx-auto">
+<div class="neumorphism p-8 rounded-2xl">
+<div class="mb-8">
+<div class="flex justify-between items-center mb-4">
+<span class="text-sm font-semibold text-gray-600">Schritt 1 von 4</span>
+<span class="text-sm font-semibold text-gray-600" id="progressText">Leistung auswählen</span>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2">
+<div class="progress-bar bg-primary h-2 rounded-full progress-bar-25" id="progressBar"></div>
+</div>
+</div>
+<form action="https://formsubmit.co/info@carstylegarage.de" method="POST" id="bookingForm">
+  <input type="hidden" name="_autoresponse" value="Ihr Anfrage wird innerhalb von 24 Stunden bearbeitet. Oder nutzen Sie den Bereich Kontakt auf der Website.">
+<div class="booking-step active" id="step1">
+<h3 class="text-2xl font-bold mb-6">Welche Leistung interessiert Sie?</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<label class="service-selection cursor-pointer">
+<input type="radio" name="service" value="autofolierung" class="hidden">
+<div class="p-4 border-2 border-gray-200 rounded-lg hover:border-primary transition-colors">
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-car-line text-xl"></i>
+</div>
+<span class="font-semibold">Autofolierung</span>
+</div>
+</div>
+</label>
+<label class="service-selection cursor-pointer">
+<input type="radio" name="service" value="lackschutz" class="hidden">
+<div class="p-4 border-2 border-gray-200 rounded-lg hover:border-primary transition-colors">
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-shield-check-line text-xl"></i>
+</div>
+<span class="font-semibold">Lackschutzfolien</span>
+</div>
+</div>
+</label>
+<label class="service-selection cursor-pointer">
+<input type="radio" name="service" value="scheibentoenung" class="hidden">
+<div class="p-4 border-2 border-gray-200 rounded-lg hover:border-primary transition-colors">
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-sun-line text-xl"></i>
+</div>
+<span class="font-semibold">Scheibentönung</span>
+</div>
+</div>
+</label>
+<label class="service-selection cursor-pointer">
+<input type="radio" name="service" value="werbetechnik" class="hidden">
+<div class="p-4 border-2 border-gray-200 rounded-lg hover:border-primary transition-colors">
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-text text-xl"></i>
+</div>
+<span class="font-semibold">Werbetechnik</span>
+</div>
+</div>
+</label>
+<label class="service-selection cursor-pointer">
+<input type="radio" name="service" value="autoglas" class="hidden">
+<div class="p-4 border-2 border-gray-200 rounded-lg hover:border-primary transition-colors">
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-car-washing-line text-xl"></i>
+</div>
+<span class="font-semibold">Autoglas Service</span>
+</div>
+</div>
+</label>
+<label class="service-selection cursor-pointer">
+<input type="radio" name="service" value="sonstiges" class="hidden">
+<div class="p-4 border-2 border-gray-200 rounded-lg hover:border-primary transition-colors">
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-more-line text-xl"></i>
+</div>
+<span class="font-semibold">Sonstiges</span>
+</div>
+</div>
+</label>
+</div>
+</div>
+<div class="booking-step" id="step2">
+<h3 class="text-2xl font-bold mb-6">Wann sollen wir Sie kontaktieren?</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-2">Gewünschtes Datum</label>
+<input type="date" name="date" class="w-full p-4 border-2 border-gray-200 rounded-lg focus:border-primary focus:outline-none text-sm" placeholder="Выберите дату" title="Выберите дату">
+</div>
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-2">Bevorzugte Uhrzeit</label>
+<div class="grid grid-cols-2 gap-2">
+<label class="time-selection cursor-pointer">
+<input type="radio" name="time" value="vormittag" class="hidden">
+<div class="p-3 border-2 border-gray-200 rounded-lg hover:border-primary transition-colors text-center text-sm">
+Vormittag<br><span class="text-xs text-gray-500">8:00 - 12:00</span>
+</div>
+</label>
+<label class="time-selection cursor-pointer">
+<input type="radio" name="time" value="nachmittag" class="hidden">
+<div class="p-3 border-2 border-gray-200 rounded-lg hover:border-primary transition-colors text-center text-sm">
+Nachmittag<br><span class="text-xs text-gray-500">12:00 - 17:00</span>
+</div>
+</label>
+</div>
+</div>
+</div>
+</div>
+<div class="booking-step" id="step3">
+<h3 class="text-2xl font-bold mb-6">Ihre Kontaktdaten</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-2">Vor- und Nachname *</label>
+<input type="text" name="name" required="" class="w-full p-4 border-2 border-gray-200 rounded-lg focus:border-primary focus:outline-none text-sm" placeholder="Max Mustermann">
+</div>
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-2">Telefonnummer *</label>
+<input type="tel" name="phone" required="" class="w-full p-4 border-2 border-gray-200 rounded-lg focus:border-primary focus:outline-none text-sm" placeholder="+49 176 12345678">
+</div>
+<div class="md:col-span-2">
+<label class="block text-sm font-semibold text-gray-700 mb-2">E-Mail Adresse</label>
+<input type="email" name="email" class="w-full p-4 border-2 border-gray-200 rounded-lg focus:border-primary focus:outline-none text-sm" placeholder="max@beispiel.de">
+</div>
+</div>
+</div>
+<div class="booking-step" id="step4">
+<h3 class="text-2xl font-bold mb-6">Zusätzliche Informationen</h3>
+<div class="space-y-6">
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-2">Fahrzeugmodell (falls zutreffend)</label>
+<input type="text" name="vehicle" class="w-full p-4 border-2 border-gray-200 rounded-lg focus:border-primary focus:outline-none text-sm" placeholder="z.B. BMW 3er, Mercedes C-Klasse">
+</div>
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-2">Beschreibung Ihres Projekts</label>
+<textarea name="description" rows="4" class="w-full p-4 border-2 border-gray-200 rounded-lg focus:border-primary focus:outline-none text-sm" placeholder="Beschreiben Sie uns Ihr Projekt oder Ihre Wünsche..."></textarea>
+</div>
+<div class="flex items-start space-x-3">
+<input type="checkbox" name="privacy" required="" class="mt-1" title="Согласие на обработку данных">
+<label class="text-sm text-gray-600">
+Ich stimme der Verarbeitung meiner Daten gemäß der
+<a href="#" class="text-primary hover:underline">Datenschutzerklärung</a> zu. *
+</label>
+</div>
+</div>
+</div>
+<div class="flex justify-between mt-8">
+<button type="button" id="prevBtn" class="px-6 py-3 border-2 border-gray-300 rounded-lg font-semibold hover:border-primary transition-colors whitespace-nowrap btn-hidden">
+Zurück
+</button>
+<button type="button" id="nextBtn" class="golden-gradient text-black px-8 py-3 !rounded-button font-semibold ml-auto hover-scale whitespace-nowrap">
+Weiter
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+<section id="communication" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16 fade-in">
+<h2 class="text-4xl md:text-5xl font-bold mb-6">Direkter <span class="text-primary">Kontakt</span></h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+Haben Sie Fragen oder möchten Sie sofort mit uns sprechen?
+Nutzen Sie unsere direkten Kommunikationswege.
+</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<div class="service-card p-6 rounded-2xl text-center fade-in">
+<div class="w-16 h-16 golden-gradient rounded-xl flex items-center justify-center mx-auto mb-4">
+<div class="w-8 h-8 flex items-center justify-center text-black">
+<i class="ri-whatsapp-line text-2xl"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3">WhatsApp</h3>
+<p class="text-gray-600 mb-4 text-sm">Schnelle Antwort garantiert</p>
+<a href="https://wa.me/4917670991956?text=Hallo%20CarStyleGarage%2C%20ich%20interessiere%20mich%20f%C3%BCr%20Ihre%20Leistungen." class="golden-gradient text-black px-4 py-2 !rounded-button font-semibold text-sm hover-scale whitespace-nowrap">
+Nachricht senden
+</a>
+</div>
+<div class="service-card p-6 rounded-2xl text-center fade-in">
+<div class="w-16 h-16 golden-gradient rounded-xl flex items-center justify-center mx-auto mb-4">
+<div class="w-8 h-8 flex items-center justify-center text-black">
+<i class="ri-phone-line text-2xl"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3">Anrufen</h3>
+<p class="text-gray-600 mb-4 text-sm">Mo-Fr: 8:00-17:00 Uhr</p>
+<a href="tel:+4917670991956" class="golden-gradient text-black px-4 py-2 !rounded-button font-semibold text-sm hover-scale whitespace-nowrap">
++49 176 70991956
+</a>
+</div>
+<div class="service-card p-6 rounded-2xl text-center fade-in">
+<div class="w-16 h-16 golden-gradient rounded-xl flex items-center justify-center mx-auto mb-4">
+<div class="w-8 h-8 flex items-center justify-center text-black">
+<i class="ri-mail-line text-2xl"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3">E-Mail</h3>
+<p class="text-gray-600 mb-4 text-sm">Ausführliche Beratung</p>
+<a href="mailto:info@carstylegarage.de" class="golden-gradient text-black px-4 py-2 !rounded-button font-semibold text-sm hover-scale whitespace-nowrap">
+E-Mail schreiben
+</a>
+</div>
+</div>
+<div class="mt-16 max-w-2xl mx-auto">
+<div class="service-card p-8 rounded-2xl fade-in">
+<h3 class="text-2xl font-bold mb-6 text-center">WhatsApp Schnellnachrichten</h3>
+<div class="space-y-3">
+<a href="https://wa.me/4917670991956?text=Hallo%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Kostenvoranschlag%20f%C3%BCr%20eine%20Autofolierung." class="block p-4 border-2 border-gray-200 rounded-lg hover:border-primary transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-medium">Kostenvoranschlag Autofolierung</span>
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</div>
+</a>
+<a href="https://wa.me/4917670991956?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20Lackschutzfolien.%20K%C3%B6nnen%20Sie%20mich%20beraten%3F" class="block p-4 border-2 border-gray-200 rounded-lg hover:border-primary transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-medium">Beratung Lackschutzfolien</span>
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</div>
+</a>
+<a href="https://wa.me/4917670991956?text=Hallo%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20f%C3%BCr%20Scheibent%C3%B6nung%20vereinbaren." class="block p-4 border-2 border-gray-200 rounded-lg hover:border-primary transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-medium">Termin Scheibentönung</span>
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="gallery" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16 fade-in">
+<h2 class="text-4xl md:text-5xl font-bold mb-6">Unsere <span class="text-primary">Arbeiten</span></h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+Entdecken Sie unsere hochwertigen Arbeiten und lassen Sie sich von der Qualität
+unserer Autofolierungen und Werbetechnik-Projekte überzeugen.
+</p>
+</div>
+<div class="flex flex-wrap justify-center gap-4 mb-12 fade-in">
+<button class="gallery-filter active px-6 py-3 rounded-lg font-semibold transition-all" data-filter="all">
+Alle Arbeiten
+</button>
+<button class="gallery-filter px-6 py-3 rounded-lg font-semibold transition-all bg-gray-100 hover:bg-gray-200" data-filter="folierung">
+Autofolierung
+</button>
+<button class="gallery-filter px-6 py-3 rounded-lg font-semibold transition-all bg-gray-100 hover:bg-gray-200" data-filter="lackschutz">
+Lackschutz
+</button>
+<button class="gallery-filter px-6 py-3 rounded-lg font-semibold transition-all bg-gray-100 hover:bg-gray-200" data-filter="scheiben">
+Scheibentönung
+</button>
+<button class="gallery-filter px-6 py-3 rounded-lg font-semibold transition-all bg-gray-100 hover:bg-gray-200" data-filter="werbung">
+Werbetechnik
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="galleryGrid">
+<div class="gallery-item folierung" data-category="folierung">
+<div class="relative overflow-hidden rounded-2xl group cursor-pointer">
+<img src="https://readdy.ai/api/search-image?query=professional%20car%20wrapping%20installation%20on%20luxury%20Porsche%20sports%20car%2C%20premium%20metallic%20blue%20vinyl%20film%20application%2C%20high-end%20automotive%20workshop%20with%20dramatic%20lighting%2C%20cinematic%20atmosphere%2C%20detailed%20close-up%20of%20wrapping%20process&width=400&height=300&seq=gallery1&orientation=landscape" alt="Porsche Vollfolierung" class="w-full h-64 object-cover object-top transition-transform group-hover:scale-110">
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="text-white text-center">
+<h4 class="text-xl font-bold mb-2">Porsche 911 Vollfolierung</h4>
+<p class="text-sm">Metallic Blue Wrap</p>
+</div>
+</div>
+</div>
+</div>
+<div class="gallery-item lackschutz" data-category="lackschutz">
+<div class="relative overflow-hidden rounded-2xl group cursor-pointer">
+<img src="https://readdy.ai/api/search-image?query=paint%20protection%20film%20installation%20on%20luxury%20Mercedes%20vehicle%20clear%20protective%20coating%20application%20professional%20automotive%20detailing%20workshop%20premium%20car%20care%20service&width=400&height=300&seq=gallery2&orientation=landscape" alt="Lackschutzfolie Mercedes" class="w-full h-64 object-cover object-top transition-transform group-hover:scale-110">
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="text-white text-center">
+<h4 class="text-xl font-bold mb-2">Mercedes C-Klasse</h4>
+<p class="text-sm">Lackschutzfolie Komplett</p>
+</div>
+</div>
+</div>
+</div>
+<div class="gallery-item scheiben" data-category="scheiben">
+<div class="relative overflow-hidden rounded-2xl group cursor-pointer">
+<img src="https://readdy.ai/api/search-image?query=professional%20window%20tinting%20service%20luxury%20Audi%20vehicle%20with%20dark%20tinted%20windows%20automotive%20glass%20treatment%20modern%20car%20detailing%20workshop%20premium%20window%20film%20installation&width=400&height=300&seq=gallery3&orientation=landscape" alt="Scheibentönung Audi" class="w-full h-64 object-cover object-top transition-transform group-hover:scale-110">
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="text-white text-center">
+<h4 class="text-xl font-bold mb-2">Audi A4 Avant</h4>
+<p class="text-sm">Premium Scheibentönung</p>
+</div>
+</div>
+</div>
+</div>
+<div class="gallery-item werbung" data-category="werbung">
+<div class="relative overflow-hidden rounded-2xl group cursor-pointer">
+<img src="https://readdy.ai/api/search-image?query=commercial%20vehicle%20advertising%20wrap%20business%20van%20with%20professional%20company%20branding%20colorful%20vinyl%20graphics%20commercial%20vehicle%20signage%20modern%20advertising%20design&width=400&height=300&seq=gallery4&orientation=landscape" alt="Fahrzeugwerbung" class="w-full h-64 object-cover object-top transition-transform group-hover:scale-110">
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="text-white text-center">
+<h4 class="text-xl font-bold mb-2">Transporter Vollbeschriftung</h4>
+<p class="text-sm">Firmenfahrzeug Design</p>
+</div>
+</div>
+</div>
+</div>
+<div class="gallery-item folierung" data-category="folierung">
+<div class="relative overflow-hidden rounded-2xl group cursor-pointer">
+<img src="https://readdy.ai/api/search-image?query=Porsche%20sports%20car%20with%20chrome%20silver%20vinyl%20wrap%20luxury%20vehicle%20customization%20premium%20automotive%20styling%20professional%20car%20wrapping%20service%20modern%20garage%20workshop&width=400&height=300&seq=gallery5&orientation=landscape" alt="Porsche Folierung" class="w-full h-64 object-cover object-top transition-transform group-hover:scale-110">
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="text-white text-center">
+<h4 class="text-xl font-bold mb-2">Porsche 911</h4>
+<p class="text-sm">Chrome Silver Wrap</p>
+</div>
+</div>
+</div>
+</div>
+<div class="gallery-item werbung" data-category="werbung">
+<div class="relative overflow-hidden rounded-2xl group cursor-pointer">
+<img src="https://readdy.ai/api/search-image?query=modern%20storefront%20window%20with%20professional%20vinyl%20lettering%20business%20signage%20commercial%20advertising%20design%20clean%20typography%20professional%20installation&width=400&height=300&seq=gallery6&orientation=landscape" alt="Schaufensterbeschriftung" class="w-full h-64 object-cover object-top transition-transform group-hover:scale-110">
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="text-white text-center">
+<h4 class="text-xl font-bold mb-2">Schaufensterbeschriftung</h4>
+<p class="text-sm">Moderne Geschäftsausstattung</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center mt-12 fade-in">
+<a href="#contact" class="golden-gradient text-black px-8 py-4 !rounded-button font-bold text-lg hover-scale whitespace-nowrap">
+Jetzt Ihr Projekt besprechen
+</a>
+</div>
+</div>
+</section>
+<section id="about" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16 fade-in">
+<h2 class="text-4xl md:text-5xl font-bold mb-6">Über <span class="text-primary">CarStyleGarage</span></h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+Seit Jahren Ihr vertrauensvoller Partner für professionelle Autofolierung
+und Werbetechnik in Kreuztal und Umgebung.
+</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+<div class="fade-in">
+<h3 class="text-3xl font-bold mb-6">Unsere Mission</h3>
+<p class="text-lg text-gray-600 mb-6">
+Bei CarStyleGarage verbinden wir handwerkliche Perfektion mit innovativer Technik.
+Unser Ziel ist es, Ihrem Fahrzeug oder Ihrem Business den perfekten Look zu verleihen
+– mit höchster Qualität und Liebe zum Detail.
+</p>
+<p class="text-lg text-gray-600 mb-8">
+Ob Vollfolierung, Lackschutz oder individuelle Werbetechnik – wir setzen Ihre Ideen
+mit modernster Technik und jahrelanger Erfahrung um.
+</p>
+<div class="grid grid-cols-2 gap-6">
+<div class="text-center">
+<div class="text-3xl font-bold text-primary mb-2">500+</div>
+<div class="text-gray-600">Zufriedene Kunden</div>
+</div>
+<div class="text-center">
+<div class="text-3xl font-bold text-primary mb-2">5+</div>
+<div class="text-gray-600">Jahre Erfahrung</div>
+</div>
+</div>
+</div>
+<div class="fade-in">
+<img src="https://readdy.ai/api/search-image?query=modern%20professional%20automotive%20workshop%20with%20car%20wrapping%20equipment%20professional%20team%20working%20on%20luxury%20vehicle%20installation%20premium%20garage%20facility%20with%20advanced%20tools%20and%20lighting&width=600&height=400&seq=about-workshop&orientation=landscape" alt="CarStyleGarage Werkstatt" class="w-full h-96 object-cover object-top rounded-2xl">
+</div>
+</div>
+<div class="mb-20 fade-in">
+<h3 class="text-3xl font-bold text-center mb-12">Unsere Partner</h3>
+<div class="flex flex-wrap justify-center gap-8 items-center w-full">
+  <div class="service-card p-6 rounded-xl text-center">
+    <div class="w-24 h-12 flex items-center justify-center mx-auto mb-2">
+      <img src="video/3m-logo-11530964217mykbwogph0.png" alt="3M Logo" class="w-full h-full object-contain">
+    </div>
+    <div class="font-semibold text-sm">3M</div>
+  </div>
+  <div class="service-card p-6 rounded-xl text-center">
+    <div class="w-24 h-12 flex items-center justify-center mx-auto mb-2">
+      <img src="video/avery-dennison-logo-png_seeklogo-314373.png" alt="Avery Dennison Logo" class="w-full h-full object-contain">
+    </div>
+    <div class="font-semibold text-sm">Avery Dennison</div>
+  </div>
+  <div class="service-card p-6 rounded-xl text-center">
+    <div class="w-24 h-12 flex items-center justify-center mx-auto mb-2">
+      <img src="video/OIP.jpg" alt="Orafol Logo" class="w-full h-full object-contain">
+    </div>
+    <div class="font-semibold text-sm">ORAFOL</div>
+  </div>
+  <div class="service-card p-6 rounded-xl text-center">
+    <div class="w-24 h-12 flex items-center justify-center mx-auto mb-2">
+      <img src="video/arlon.png" alt="ARLON Logo" class="w-full h-full object-contain">
+    </div>
+    <div class="font-semibold text-sm">ARLON</div>
+  </div>
+  <div class="service-card p-6 rounded-xl text-center">
+    <a href="https://kreuztal.ksautoglas.com" target="_blank" rel="noopener" class="block">
+      <div class="w-24 h-12 flex items-center justify-center mx-auto mb-2">
+        <img src="../image/bc0278286d811d4b2215533ff8dd92ef/8562017eecf2dded022a11e49c33dbbd.png" alt="Premium Partner Logo" class="w-full h-full object-contain">
+      </div>
+      <div class="font-semibold text-sm">Premium Partner</div>
+    </a>
+  </div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 fade-in">
+<div class="service-card p-8 rounded-2xl text-center">
+<div class="w-16 h-16 golden-gradient rounded-xl flex items-center justify-center mx-auto mb-6">
+<div class="w-8 h-8 flex items-center justify-center text-black">
+<i class="ri-award-line text-2xl"></i>
+</div>
+</div>
+<h4 class="text-xl font-bold mb-4">Premium Qualität</h4>
+<p class="text-gray-600">
+Wir verwenden ausschließlich hochwertige Materialien von führenden Herstellern
+und garantieren langanhaltende Ergebnisse.
+</p>
+</div>
+<div class="service-card p-8 rounded-2xl text-center">
+<div class="w-16 h-16 golden-gradient rounded-xl flex items-center justify-center mx-auto mb-6">
+<div class="w-8 h-8 flex items-center justify-center text-black">
+<i class="ri-time-line text-2xl"></i>
+</div>
+</div>
+<h4 class="text-xl font-bold mb-4">Schnelle Umsetzung</h4>
+<p class="text-gray-600">
+Dank effizienter Arbeitsabläufe und moderner Ausstattung realisieren wir
+Ihr Projekt in kürzester Zeit.
+</p>
+</div>
+<div class="service-card p-8 rounded-2xl text-center">
+<div class="w-16 h-16 golden-gradient rounded-xl flex items-center justify-center mx-auto mb-6">
+<div class="w-8 h-8 flex items-center justify-center text-black">
+<i class="ri-customer-service-line text-2xl"></i>
+</div>
+</div>
+<h4 class="text-xl font-bold mb-4">Persönliche Beratung</h4>
+<p class="text-gray-600">
+Unser erfahrenes Team berät Sie individuell und findet die perfekte Lösung
+für Ihre Anforderungen.
+</p>
+</div>
+</div>
+</div>
+</section>
+<section id="contact" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16 fade-in">
+<h2 class="text-4xl md:text-5xl font-bold mb-6">Kontakt & <span class="text-primary">Standort</span></h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+Besuchen Sie uns in Kreuztal oder kontaktieren Sie uns für eine unverbindliche Beratung.
+Wir freuen uns auf Ihr Projekt!
+</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+<div class="fade-in">
+<div class="neumorphism p-8 rounded-2xl mb-8">
+<h3 class="text-2xl font-bold mb-6">Kontaktinformationen</h3>
+<div class="space-y-6">
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 golden-gradient rounded-xl flex items-center justify-center flex-shrink-0">
+<div class="w-6 h-6 flex items-center justify-center text-black">
+<i class="ri-map-pin-line text-xl"></i>
+</div>
+</div>
+<div>
+<h4 class="font-semibold mb-1">Adresse</h4>
+<p class="text-gray-600">
+Hagener Straße 40<br>
+57223 Kreuztal<br>
+Deutschland
+</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 golden-gradient rounded-xl flex items-center justify-center flex-shrink-0">
+<div class="w-6 h-6 flex items-center justify-center text-black">
+<i class="ri-phone-line text-xl"></i>
+</div>
+</div>
+<div>
+<h4 class="font-semibold mb-1">Telefon</h4>
+<a href="tel:+4917670991956" class="contact-link">
++49 176 70991956
+</a>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 golden-gradient rounded-xl flex items-center justify-center flex-shrink-0">
+<div class="w-6 h-6 flex items-center justify-center text-black">
+<i class="ri-mail-line text-xl"></i>
+</div>
+</div>
+<div>
+<h4 class="font-semibold mb-1">E-Mail</h4>
+<a href="mailto:info@carstylegarage.de" class="contact-link">
+  info@carstylegarage.de
+</a>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 golden-gradient rounded-xl flex items-center justify-center flex-shrink-0">
+<div class="w-6 h-6 flex items-center justify-center text-black">
+<i class="ri-time-line text-xl"></i>
+</div>
+</div>
+<div>
+<h4 class="font-semibold mb-1">Öffnungszeiten</h4>
+<div class="text-gray-600 text-sm">
+<div>Mo - Fr: 08:00 - 17:00 Uhr</div>
+<div>Sa: 09:00 - 14:00 Uhr</div>
+<div>So: Geschlossen</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="neumorphism p-8 rounded-2xl">
+<h3 class="text-2xl font-bold mb-6">Nachricht senden</h3>
+<form class="space-y-6" action="https://formsubmit.co/info@carstylegarage.de" method="POST">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+  <div>
+    <input type="text" placeholder="Ihr Name" class="w-full p-4 border-2 border-gray-200 rounded-lg focus:border-primary focus:outline-none text-sm">
+  </div>
+  <div>
+    <input type="email" placeholder="Ihre E-Mail" class="w-full p-4 border-2 border-gray-200 rounded-lg focus:border-primary focus:outline-none text-sm">
+  </div>
+  <div>
+    <input type="tel" placeholder="Ihre Telefonnummer" class="w-full p-4 border-2 border-gray-200 rounded-lg focus:border-primary focus:outline-none text-sm">
+  </div>
+</div>
+<div>
+<input type="text" placeholder="Betreff" class="w-full p-4 border-2 border-gray-200 rounded-lg focus:border-primary focus:outline-none text-sm">
+</div>
+<div>
+<textarea rows="4" placeholder="Ihre Nachricht" class="w-full p-4 border-2 border-gray-200 rounded-lg focus:border-primary focus:outline-none text-sm"></textarea>
+</div>
+<button type="submit" class="golden-gradient text-black px-8 py-3 !rounded-button font-semibold hover-scale whitespace-nowrap">
+Nachricht senden
+</button>
+</form>
+<input type="hidden" name="_autoresponse" value="Vielen Dank für Ihre Nachricht! Wir melden uns schnellstmöglich zurück.">
+</form>
+</div>
+</div>
+<div class="fade-in">
+<div class="neumorphism p-8 rounded-2xl h-full">
+<h3 class="text-2xl font-bold mb-6">Unser Standort</h3>
+<div class="w-full h-96 bg-gray-200 rounded-xl overflow-hidden mb-6 map-bg">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20096.87123502028!2d8.001945599999999!3d50.9771776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bc0269f56ca6dd%3A0x55395ad4cb661c6e!2sCar%20Style%20Garage!5e0!3m2!1sru!2sde!4v1754420348024!5m2!1sru!2sde" width="600" height="450" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="CarStyleGarage Standort"></iframe>
+</div>
+<div class="space-y-4">
+<h4 class="text-lg font-semibold">Servicegebiet</h4>
+<div class="grid grid-cols-2 gap-2 text-sm text-gray-600">
+<div>• Kreuztal</div>
+<div>• Siegen</div>
+<div>• Olpe</div>
+<div>• Wenden</div>
+<div>• Hilchenbach</div>
+<div>• Freudenberg</div>
+</div>
+<p class="text-sm text-gray-600 mt-4">
+Wir bedienen gerne auch umliegende Gebiete.
+Sprechen Sie uns für Ihren Standort an!
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16 fade-in">
+<div class="neumorphism p-8 rounded-2xl">
+<h3 class="text-2xl font-bold text-center mb-8">Häufig gestellte Fragen</h3>
+<div class="max-w-4xl mx-auto space-y-4">
+<div class="faq-item border-b border-gray-200 pb-4">
+<button class="faq-question w-full text-left flex justify-between items-center py-4 font-semibold hover:text-primary">
+<span>Wie lange dauert eine Vollfolierung?</span>
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-arrow-down-s-line text-xl"></i>
+</div>
+</button>
+<div class="faq-answer text-gray-600">
+<p>Eine Vollfolierung dauert je nach Fahrzeugtyp zwischen 2-4 Tagen. Wir nehmen uns die nötige Zeit für ein perfektes Ergebnis.</p>
+</div>
+</div>
+<div class="faq-item border-b border-gray-200 pb-4">
+<button class="faq-question w-full text-left flex justify-between items-center py-4 font-semibold hover:text-primary">
+<span>Welche Garantie geben Sie auf Ihre Arbeiten?</span>
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-arrow-down-s-line text-xl"></i>
+</div>
+</button>
+<div class="faq-answer text-gray-600">
+<p>Wir geben je nach Material und Anwendung 2-5 Jahre Garantie auf unsere Folierungsarbeiten.</p>
+</div>
+</div>
+<div class="faq-item border-b border-gray-200 pb-4">
+<button class="faq-question w-full text-left flex justify-between items-center py-4 font-semibold hover:text-primary">
+<span>Kann die Folie wieder entfernt werden?</span>
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-arrow-down-s-line text-xl"></i>
+</div>
+</button>
+<div class="faq-answer text-gray-600">
+<p>Ja, unsere hochwertigen Folien können jederzeit rückstandslos entfernt werden, ohne den Originallack zu beschädigen.</p>
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-question w-full text-left flex justify-between items-center py-4 font-semibold hover:text-primary">
+<span>Bieten Sie auch Finanzierung an?</span>
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-arrow-down-s-line text-xl"></i>
+</div>
+</button>
+<div class="faq-answer text-gray-600">
+<p>Ja, wir bieten flexible Finanzierungsmöglichkeiten für größere Projekte. Sprechen Sie uns gerne darauf an.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-black text-white py-16">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<div>
+<div class="flex items-center space-x-4 mb-6">
+<div class="w-12 h-12 flex items-center justify-center">
+<img src="../image/bc0278286d811d4b2215533ff8dd92ef/3f71de0fca98339a1d8976cb697a3bff-1.png" alt="CarStyleGarage Logo" class="w-full h-full object-contain">
+</div>
+<div>
+<h3 class="text-xl font-bold">CarStyleGarage</h3>
+<p class="text-gray-400 text-sm">Premium Autofolierung</p>
+</div>
+</div>
+<p class="text-gray-400 mb-6">
+Ihr Profi für Carwrapping und Werbetechnik in Kreuztal.
+Qualität, die überzeugt.
+</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary hover:text-black transition-colors" title="Facebook">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-facebook-line"></i>
+</div>
+</a>
+<a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary hover:text-black transition-colors" title="Instagram">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-instagram-line"></i>
+</div>
+</a>
+<a href="https://wa.me/4917670991956" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary hover:text-black transition-colors" title="WhatsApp">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-whatsapp-line"></i>
+</div>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-6">Leistungen</h4>
+<ul class="space-y-3 text-gray-400">
+<li><a href="#services" class="hover:text-primary transition-colors">Autofolierung</a></li>
+<li><a href="#services" class="hover:text-primary transition-colors">Lackschutzfolien</a></li>
+<li><a href="#services" class="hover:text-primary transition-colors">Scheibentönung</a></li>
+<li><a href="#services" class="hover:text-primary transition-colors">Werbetechnik</a></li>
+<li><a href="#services" class="hover:text-primary transition-colors">Autoglas Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-6">Kontakt</h4>
+<ul class="space-y-3 text-gray-400">
+<li>Hagener Straße 40</li>
+<li>57223 Kreuztal</li>
+<li><a href="tel:+4917670991956" class="hover:text-primary transition-colors">+49 176 70991956</a></li>
+<li><a href="mailto:info@carstylegarage.de" class="hover:text-primary transition-colors">info@carstylegarage.de</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-6">Öffnungszeiten</h4>
+<ul class="space-y-3 text-gray-400 text-sm">
+<li>Mo - Fr: 08:00 - 17:00</li>
+<li>Sa: 09:00 - 14:00</li>
+<li>So: Geschlossen</li>
+</ul>
+<div class="mt-6">
+<a href="#booking" class="golden-gradient text-black px-6 py-3 !rounded-button font-semibold text-sm hover-scale whitespace-nowrap inline-block">
+Jetzt Termin buchen
+</a>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+<p class="text-gray-400 text-sm">
+© 2024 CarStyleGarage. Alle Rechte vorbehalten.
+</p>
+<div class="flex space-x-6 text-sm text-gray-400">
+<a href="#" class="hover:text-primary transition-colors">Impressum</a>
+<a href="#" class="hover:text-primary transition-colors">Datenschutz</a>
+<a href="#" class="hover:text-primary transition-colors">AGB</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<a href="https://wa.me/4917670991956" class="whatsapp-float" title="WhatsApp">
+<div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white shadow-lg hover-scale">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-whatsapp-line text-2xl"></i>
+</div>
+</div>
+</a>
+<button class="back-to-top" id="backToTop" title="Наверх">
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-black shadow-lg hover-scale">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-arrow-up-line text-xl"></i>
+</div>
+</div>
+</button>
+<div class="lightbox" id="lightbox">
+<div class="relative max-w-4xl max-h-full">
+<img src="" alt="" id="lightboxImage" class="max-w-full max-h-full object-contain">
+<button class="absolute top-4 right-4 w-10 h-10 bg-black/50 rounded-full flex items-center justify-center text-white" id="closeLightbox" title="Закрыть">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-close-line text-xl"></i>
+</div>
+</button>
+</div>
+</div>
+<script id="loading-script">
+document.addEventListener('DOMContentLoaded', function() {
+setTimeout(function() {
+document.getElementById('loading').style.display = 'none';
+}, 1000);
+});
+</script>
+<script id="navigation-script">
+document.addEventListener('DOMContentLoaded', function() {
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+const closeMobile = document.getElementById('closeMobile');
+const header = document.querySelector('.sticky-header');
+hamburger.addEventListener('click', function() {
+hamburger.classList.toggle('active');
+mobileMenu.classList.toggle('active');
+});
+closeMobile.addEventListener('click', function() {
+hamburger.classList.remove('active');
+mobileMenu.classList.remove('active');
+});
+document.addEventListener('click', function(e) {
+if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+hamburger.classList.remove('active');
+mobileMenu.classList.remove('active');
+}
+});
+window.addEventListener('scroll', function() {
+if (window.scrollY > 100) {
+header.classList.add('shadow-md');
+} else {
+header.classList.remove('shadow-md');
+}
+});
+});
+</script>
+<script id="booking-script">
+document.addEventListener('DOMContentLoaded', function() {
+let currentStep = 1;
+const totalSteps = 4;
+const nextBtn = document.getElementById('nextBtn');
+const prevBtn = document.getElementById('prevBtn');
+const progressBar = document.getElementById('progressBar');
+const progressText = document.getElementById('progressText');
+const stepTexts = [
+'Leistung auswählen',
+'Termin wählen',
+'Kontaktdaten',
+'Zusätzliche Infos'
+];
+function updateStep() {
+document.querySelectorAll('.booking-step').forEach(step => {
+step.classList.remove('active');
+});
+document.getElementById(`step${currentStep}`).classList.add('active');
+const progress = (currentStep / totalSteps) * 100;
+progressBar.style.width = progress + '%';
+progressText.textContent = stepTexts[currentStep - 1];
+prevBtn.style.display = currentStep === 1 ? 'none' : 'block';
+nextBtn.textContent = currentStep === totalSteps ? 'Absenden' : 'Weiter';
+}
+nextBtn.addEventListener('click', function() {
+if (currentStep < totalSteps) {
+if (validateStep(currentStep)) {
+currentStep++;
+updateStep();
+}
+} else {
+submitForm();
+}
+});
+prevBtn.addEventListener('click', function() {
+if (currentStep > 1) {
+currentStep--;
+updateStep();
+}
+});
+function validateStep(step) {
+if (step === 1) {
+return document.querySelector('input[name="service"]:checked') !== null;
+}
+if (step === 3) {
+const name = document.querySelector('input[name="name"]').value;
+const phone = document.querySelector('input[name="phone"]').value;
+return name.trim() !== '' && phone.trim() !== '';
+}
+return true;
+}
+function submitForm() {
+alert('Vielen Dank für Ihre Anfrage! Wir melden uns in Kürze bei Ihnen.');
+}
+document.querySelectorAll('.service-selection input').forEach(input => {
+input.addEventListener('change', function() {
+document.querySelectorAll('.service-selection div').forEach(div => {
+div.classList.remove('border-primary', 'bg-primary/10');
+div.classList.add('border-gray-200');
+});
+if (this.checked) {
+this.nextElementSibling.classList.remove('border-gray-200');
+this.nextElementSibling.classList.add('border-primary', 'bg-primary/10');
+}
+});
+});
+document.querySelectorAll('.time-selection input').forEach(input => {
+input.addEventListener('change', function() {
+document.querySelectorAll('.time-selection div').forEach(div => {
+div.classList.remove('border-primary', 'bg-primary/10');
+div.classList.add('border-gray-200');
+});
+if (this.checked) {
+this.nextElementSibling.classList.remove('border-gray-200');
+this.nextElementSibling.classList.add('border-primary', 'bg-primary/10');
+}
+});
+});
+});
+</script>
+<script id="gallery-script">
+document.addEventListener('DOMContentLoaded', function() {
+const filterButtons = document.querySelectorAll('.gallery-filter');
+const galleryItems = document.querySelectorAll('.gallery-item');
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.getElementById('lightboxImage');
+const closeLightbox = document.getElementById('closeLightbox');
+filterButtons.forEach(button => {
+button.addEventListener('click', function() {
+const filter = this.dataset.filter;
+filterButtons.forEach(btn => {
+btn.classList.remove('active');
+btn.classList.add('bg-gray-100', 'hover:bg-gray-200');
+btn.classList.remove('text-white');
+});
+this.classList.add('active');
+this.classList.remove('bg-gray-100', 'hover:bg-gray-200');
+this.classList.add('text-white');
+galleryItems.forEach(item => {
+if (filter === 'all' || item.dataset.category === filter) {
+item.style.display = 'block';
+} else {
+item.style.display = 'none';
+}
+});
+});
+});
+galleryItems.forEach(item => {
+item.addEventListener('click', function() {
+const img = this.querySelector('img');
+lightboxImage.src = img.src;
+lightboxImage.alt = img.alt;
+lightbox.classList.add('active');
+});
+});
+closeLightbox.addEventListener('click', function() {
+lightbox.classList.remove('active');
+});
+lightbox.addEventListener('click', function(e) {
+if (e.target === lightbox) {
+lightbox.classList.remove('active');
+}
+});
+});
+</script>
+<script id="faq-script">
+document.addEventListener('DOMContentLoaded', function() {
+const faqItems = document.querySelectorAll('.faq-item');
+faqItems.forEach(item => {
+const question = item.querySelector('.faq-question');
+question.addEventListener('click', function() {
+const isActive = item.classList.contains('active');
+faqItems.forEach(otherItem => {
+otherItem.classList.remove('active');
+});
+if (!isActive) {
+item.classList.add('active');
+}
+});
+});
+});
+</script>
+<script id="scroll-effects-script">
+document.addEventListener('DOMContentLoaded', function() {
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', function() {
+if (window.scrollY > 300) {
+backToTop.classList.add('visible');
+} else {
+backToTop.classList.remove('visible');
+}
+});
+backToTop.addEventListener('click', function() {
+window.scrollTo({
+top: 0,
+behavior: 'smooth'
+});
+});
+const observerOptions = {
+threshold: 0.1,
+rootMargin: '0px 0px -50px 0px'
+};
+const observer = new IntersectionObserver(function(entries) {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('visible');
+}
+});
+}, observerOptions);
+document.querySelectorAll('.fade-in').forEach(el => {
+observer.observe(el);
+});
+});
+</script>
+<script>
+    !function (t, e) { var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.crossOrigin = "anonymous", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
+    posthog.init('phc_t9tkQZJiyi2ps9zUYm8TDsL6qXo4YmZx0Ot5rBlAlEd', {
+        api_host: 'https://us.i.posthog.com',
+        autocapture: false,
+        capture_pageview: false,
+        capture_pageleave: false,
+        capture_performance: {
+            web_vitals: false,
+        },
+        rageclick: false,
+    })
+    window.shareKey = '_Om-qkVU3eEOzwYY2qScLw';
+    window.host = 'readdy.ai';
+</script>
+</body>
+</html>

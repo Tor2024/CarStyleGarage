@@ -1,0 +1,84 @@
+Uri: https://cdn.tailwindcss.com/3.4.16
+File Name: C:\Downloaded Web Sites\readdy.link\3.4-1.16
+Content Type: text/javascript
+
+Uri: https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.eot?t=1734404658139
+File Name: C:\Downloaded Web Sites\readdy.link\ajax\libs\remixicon\4.6.0\remixicon-1.eot
+Content Type: application/octet-stream
+
+Uri: https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css
+File Name: C:\Downloaded Web Sites\readdy.link\ajax\libs\remixicon\4.6.0\remixicon.min-1.css
+Content Type: text/css
+
+Uri: https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.svg?t=1734404658139
+File Name: C:\Downloaded Web Sites\readdy.link\ajax\libs\remixicon\4.6.0\remixicon-1.svg
+Content Type: image/svg+xml
+
+Uri: https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.ttf?t=1734404658139
+File Name: C:\Downloaded Web Sites\readdy.link\ajax\libs\remixicon\4.6.0\remixicon-1.ttf
+Content Type: application/octet-stream
+
+Uri: https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.woff2?t=1734404658139
+File Name: C:\Downloaded Web Sites\readdy.link\ajax\libs\remixicon\4.6.0\remixicon-1.woff2
+Content Type: application/octet-stream
+
+Uri: https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.woff?t=1734404658139
+File Name: C:\Downloaded Web Sites\readdy.link\ajax\libs\remixicon\4.6.0\remixicon-1.woff
+Content Type: application/octet-stream
+
+Uri: https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap
+File Name: C:\Downloaded Web Sites\readdy.link\css2-2
+Content Type: text/css
+
+Uri: https://fonts.googleapis.com/css2?family=Pacifico&display=swap
+File Name: C:\Downloaded Web Sites\readdy.link\css2-3
+Content Type: text/css
+
+Uri: https://fonts.gstatic.com/s/oswald/v56/TK3_WkUHHAIjg75cFRf3bXL8LICs169vgUE.ttf
+File Name: C:\Downloaded Web Sites\readdy.link\s\oswald\v56\TK3_WkUHHAIjg75cFRf3bXL8LICs169vgUE-1.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/oswald/v56/TK3_WkUHHAIjg75cFRf3bXL8LICs18NvgUE.ttf
+File Name: C:\Downloaded Web Sites\readdy.link\s\oswald\v56\TK3_WkUHHAIjg75cFRf3bXL8LICs18NvgUE-1.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/oswald/v56/TK3_WkUHHAIjg75cFRf3bXL8LICs1xZogUE.ttf
+File Name: C:\Downloaded Web Sites\readdy.link\s\oswald\v56\TK3_WkUHHAIjg75cFRf3bXL8LICs1xZogUE-1.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/oswald/v56/TK3_WkUHHAIjg75cFRf3bXL8LICs1y9ogUE.ttf
+File Name: C:\Downloaded Web Sites\readdy.link\s\oswald\v56\TK3_WkUHHAIjg75cFRf3bXL8LICs1y9ogUE-1.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/oswald/v56/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvgUE.ttf
+File Name: C:\Downloaded Web Sites\readdy.link\s\oswald\v56\TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvgUE-1.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/pacifico/v22/FwZY7-Qmy14u9lezJ96A.ttf
+File Name: C:\Downloaded Web Sites\readdy.link\s\pacifico\v22\FwZY7-Qmy14u9lezJ96A-1.ttf
+Content Type: font/ttf
+
+Uri: https://public.readdy.ai/gen_page/map_placeholder_1280x720.png
+File Name: C:\Downloaded Web Sites\readdy.link\gen_page\map_placeholder_1280x720-2.png
+Content Type: image/png
+
+Uri: https://readdy.link/share/4e71bd7acdf6bae6f565be59fc690d3d
+File Name: C:\Downloaded Web Sites\readdy.link\share\4e71bd7acdf6bae6f565be59fc690d3d.html
+Content Type: text/html
+
+Uri: https://static.readdy.ai/image/bc0278286d811d4b2215533ff8dd92ef/3f71de0fca98339a1d8976cb697a3bff.png
+File Name: C:\Downloaded Web Sites\readdy.link\image\bc0278286d811d4b2215533ff8dd92ef\3f71de0fca98339a1d8976cb697a3bff-1.png
+Content Type: binary/octet-stream
+
+Uri: https://static.readdy.ai/image/bc0278286d811d4b2215533ff8dd92ef/8562017eecf2dded022a11e49c33dbbd.png
+File Name: C:\Downloaded Web Sites\readdy.link\image\bc0278286d811d4b2215533ff8dd92ef\8562017eecf2dded022a11e49c33dbbd.png
+Content Type: binary/octet-stream
+
+Uri: https://static.readdy.ai/static/e.js
+File Name: C:\Downloaded Web Sites\readdy.link\static\e-2.js
+Content Type: application/javascript
+
+Uri: https://static.readdy.ai/static/share.js
+File Name: C:\Downloaded Web Sites\readdy.link\static\share-2.js
+Content Type: application/javascript
+
